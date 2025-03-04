@@ -76,6 +76,11 @@ class Player {
         setTimeout(() => {
             // Check for hits at the moment the stick is extended (75% through animation)
             checkAttacks();
+            
+            // Also check for pig hits
+            if (pigManager) {
+                pigManager.checkPlayerAttack();
+            }
         }, 150); // 150ms is approximately 50% through our 300ms animation
         
         // Reset attacking state and remove class after animation completes

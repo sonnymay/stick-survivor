@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- Pig body -->
+  <ellipse cx="20" cy="25" rx="15" ry="12" fill="#FFB6C1" />
+  
+  <!-- Pig head -->
+  <circle cx="20" cy="15" r="10" fill="#FFB6C1" />
+  
+  <!-- Ears -->
+  <ellipse cx="12" cy="8" rx="4" ry="5" fill="#FF9999" transform="rotate(-20, 12, 8)" />
+  <ellipse cx="28" cy="8" rx="4" ry="5" fill="#FF9999" transform="rotate(20, 28, 8)" />
+  
+  <!-- Eyes -->
+  <circle cx="16" cy="13" r="2" fill="black" />
+  <circle cx="24" cy="13" r="2" fill="black" />
+  
+  <!-- Snout -->
+  <ellipse cx="20" cy="18" rx="5" ry="4" fill="#FF9999" />
+  
+  <!-- Nostrils -->
+  <ellipse cx="18" cy="18" rx="1" ry="1.2" fill="#FF6666" />
+  <ellipse cx="22" cy="18" rx="1" ry="1.2" fill="#FF6666" />
+  
+  <!-- Legs -->
+  <rect x="11" y="32" width="4" height="6" fill="#FFB6C1" rx="2" />
+  <rect x="25" y="32" width="4" height="6" fill="#FFB6C1" rx="2" />
+  <rect x="14" y="32" width="4" height="6" fill="#FFB6C1" rx="2" />
+  <rect x="22" y="32" width="4" height="6" fill="#FFB6C1" rx="2" />
+  
+  <!-- Tail -->
+  <path d="M5 24 Q 3 22, 5 20" stroke="#FFB6C1" stroke-width="2" fill="none" transform="translate(30, 0) rotate(45, 5, 22)" />
+</svg>

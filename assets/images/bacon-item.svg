@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 15">
+  <!-- Bacon strips -->
+  <path d="M2 2 Q 15 0, 28 2 Q 15 4, 2 2 Z" fill="#FF6666" />
+  <path d="M2 5 Q 15 3, 28 5 Q 15 7, 2 5 Z" fill="#DD4444" />
+  <path d="M2 8 Q 15 6, 28 8 Q 15 10, 2 8 Z" fill="#FF6666" />
+  <path d="M2 11 Q 15 9, 28 11 Q 15 13, 2 11 Z" fill="#DD4444" />
+  
+  <!-- Fat parts -->
+  <path d="M5 1.5 Q 7 1, 8 1.5 Q 7 2, 5 1.5 Z" fill="#FFEEEE" />
+  <path d="M20 2.5 Q 22 2, 23 2.5 Q 22 3, 20 2.5 Z" fill="#FFEEEE" />
+  <path d="M10 4.5 Q 12 4, 13 4.5 Q 12 5, 10 4.5 Z" fill="#FFEEEE" />
+  <path d="M18 7.5 Q 20 7, 21 7.5 Q 20 8, 18 7.5 Z" fill="#FFEEEE" />
+  <path d="M6 10.5 Q 8 10, 9 10.5 Q 8 11, 6 10.5 Z" fill="#FFEEEE" />
+  <path d="M22 11.5 Q 24 11, 25 11.5 Q 24 12, 22 11.5 Z" fill="#FFEEEE" />
+</svg>

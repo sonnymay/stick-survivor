@@ -70,9 +70,17 @@ class Environment {
         x = x || Math.random() * (camera.worldWidth - 30);
         y = y || Math.random() * (camera.worldHeight - 30);
         
+        // Check if the position is inside any obstacle
+        const isInsideObstacle = this.checkObstacleCollisions(null, x, y);
+        
+        // If inside obstacle, try again with a new position
+        if (isInsideObstacle) {
+            return this.spawnCollectible(type);
+        }
+        
         const collectible = {
             id: 'collectible' + this.collectibles.length,
-            type: type, // 'health' or 'coin'
+            type: type, // 'health', 'coin', or 'bacon'
             x: x,
             y: y,
             width: 30,
@@ -89,7 +97,20 @@ class Environment {
         collectibleElement.style.top = collectible.y + 'px';
         collectibleElement.style.width = collectible.width + 'px';
         collectibleElement.style.height = collectible.height + 'px';
-        collectibleElement.style.backgroundImage = `url("assets/images/${type === 'health' ? 'health-pack' : 'coin'}.svg")`;
+        
+        // Set the correct image based on type
+        let imagePath;
+        if (type === 'health') {
+            imagePath = 'health-pack.svg';
+        } else if (type === 'coin') {
+            imagePath = 'coin.svg';
+        } else if (type === 'bacon') {
+            imagePath = 'bacon-item.svg';
+        } else {
+            imagePath = 'coin.svg'; // Default fallback
+        }
+        
+        collectibleElement.style.backgroundImage = `url("assets/images/${imagePath}")`;
         collectibleElement.style.backgroundSize = 'contain';
         collectibleElement.style.backgroundRepeat = 'no-repeat';
         collectibleElement.style.position = 'absolute';
@@ -128,6 +149,10 @@ class Environment {
                 } else if (collectible.type === 'coin') {
                     player.coins += 5;
                     showFloatingText('+5 Coins', player.x, player.y - 20, '#FFD700');
+                } else if (collectible.type === 'bacon') {
+                    player.health = Math.min(100, player.health + 10);
+                    player.coins += 10;
+                    showFloatingText('+10 Health & Coins', player.x, player.y - 20, '#FFA500');
                 }
                 
                 // Update HUD

@@ -6,6 +6,7 @@ let otherPlayers = [];
 let storeManager;
 let environment;
 let camera;
+let pigManager;
 
 // DOM elements
 const gameContainer = document.getElementById('game-container');
@@ -46,6 +47,14 @@ function initGame() {
     // Initialize store
     storeManager = new StoreManager();
     
+    // Initialize pig manager
+    pigManager = new PigManager();
+    
+    // Spawn initial pigs
+    for (let i = 0; i < 10; i++) {
+        pigManager.spawnPig();
+    }
+    
     // Start the game loop
     gameLoop();
     
@@ -70,6 +79,9 @@ function gameLoop() {
     
     // Update enemies
     updateEnemies();
+    
+    // Update pigs
+    pigManager.update();
     
     // Request next frame
     requestAnimationFrame(gameLoop);
