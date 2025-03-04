@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a3300;
+    background-size: cover;
+    transition: filter 2s ease;
+}
+
+.player {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-origin: center bottom;
+}
+
+.stick {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-origin: 0 center;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 100; /* Make sure HUD is on top */
+}
+
+#players-list {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 200px;
+    z-index: 100; /* Make sure player list is on top */
+}
+
+#store {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 300px;
+    z-index: 200; /* Make sure store is on top */
+}
+
+.store-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.buy-button {
+    background-color: #ff9900;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#shop-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9900;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 100; /* Make sure shop button is on top */
+}
+
+/* Stick attack animation */
+@keyframes stick-attack {
+    0% { transform: rotate(var(--rotation)) scaleX(1); }
+    25% { transform: rotate(var(--rotation)) scaleX(0.8); } /* Pull back */
+    75% { transform: rotate(var(--rotation)) scaleX(1.3); } /* Extend forward */
+    100% { transform: rotate(var(--rotation)) scaleX(1); }
+}
+
+.attacking {
+    animation: stick-attack 0.3s ease-in-out;
+}
+
+/* Hit effect animation */
+@keyframes hit-flash {
+    0% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.7; filter: brightness(1.5); }
+    100% { opacity: 1; filter: brightness(1); }
+}
+
+.hit {
+    animation: hit-flash 0.3s;
+}
+
+/* Impact effect animation */
+@keyframes impact {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+.impact-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: impact 0.5s ease-out forwards;
+    z-index: 10;
+}
+
+/* Knockback animation */
+@keyframes knockback {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(var(--knockback-x)) translateY(var(--knockback-y)); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+.knockback {
+    animation: knockback 0.3s ease-out;
+}
+
+/* Floating animation for collectibles */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Floating text animation */
+@keyframes float-up {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-30px); opacity: 0; }
+}
+
+/* Obstacle and collectible styles */
+.obstacle {
+    position: absolute;
+    pointer-events: none;
+}
+
+.collectible {
+    position: absolute;
+    z-index: 2;
+    animation: float 2s infinite ease-in-out;
+}
+
+/* Battle pass progress bar */
+.progress-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #ff9900;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    transition: width 0.5s ease;
+}
+
+/* Premium items indicator */
+.premium-item {
+    position: relative;
+}
+
+.premium-item::after {
+    content: '★';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: gold;
+    font-size: 20px;
+}

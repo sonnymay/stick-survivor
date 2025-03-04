@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 50">
+  <!-- Player body -->
+  <rect x="8" y="25" width="14" height="25" fill="#8B4513" />
+  <!-- Player head -->
+  <circle cx="15" cy="15" r="10" fill="#FFD700" />
+  <!-- Eyes -->
+  <circle cx="12" cy="13" r="2" fill="#000" />
+  <circle cx="18" cy="13" r="2" fill="#000" />
+  <!-- Mouth -->
+  <path d="M11 19 Q15 22 19 19" stroke="#000" fill="transparent" stroke-width="1.5" />
+  <!-- Arms -->
+  <rect x="2" y="30" width="6" height="4" fill="#FFD700" />
+  <rect x="22" y="30" width="6" height="4" fill="#FFD700" />
+  <!-- Hands -->
+  <circle cx="2" cy="32" r="3" fill="#FFD700" />
+  <circle cx="28" cy="32" r="3" fill="#FFD700" />
+</svg>

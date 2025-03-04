@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <!-- Coin outer circle -->
+  <circle cx="10" cy="10" r="9" fill="#FFD700" stroke="#B8860B" stroke-width="1" />
+  
+  <!-- Coin inner circle -->
+  <circle cx="10" cy="10" r="7" fill="#FFDF00" />
+  
+  <!-- Coin texture -->
+  <circle cx="10" cy="10" r="5" fill="#FFD700" />
+  
+  <!-- Coin highlight -->
+  <ellipse cx="7" cy="7" rx="2" ry="2" fill="#FFFFE0" />
+  
+  <!-- Dollar sign -->
+  <path d="M10 4 L10 16 M8 6 L12 6 M8 14 L12 14 M8 10 L12 10" stroke="#B8860B" stroke-width="1.5" fill="none" />
+</svg>

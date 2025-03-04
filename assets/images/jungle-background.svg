@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Sky -->
+  <rect width="400" height="200" fill="#87CEEB" />
+  
+  <!-- Ground -->
+  <rect y="200" width="400" height="100" fill="#2E8B57" />
+  
+  <!-- Sun -->
+  <circle cx="350" cy="50" r="30" fill="#FFFF00" />
+  
+  <!-- Mountains -->
+  <polygon points="0,200 50,130 100,180 150,110 200,190 300,140 350,200" fill="#6B8E23" />
+  
+  <!-- Trees -->
+  <!-- Tree 1 -->
+  <rect x="50" y="150" width="10" height="50" fill="#8B4513" />
+  <polygon points="30,150 80,150 55,100" fill="#228B22" />
+  <polygon points="35,120 75,120 55,80" fill="#228B22" />
+  
+  <!-- Tree 2 -->
+  <rect x="150" y="140" width="12" height="60" fill="#8B4513" />
+  <polygon points="125,140 175,140 150,80" fill="#228B22" />
+  <polygon points="130,100 170,100 150,50" fill="#228B22" />
+  
+  <!-- Tree 3 -->
+  <rect x="250" y="150" width="10" height="50" fill="#8B4513" />
+  <polygon points="230,150 280,150 255,100" fill="#228B22" />
+  <polygon points="235,120 275,120 255,80" fill="#228B22" />
+  
+  <!-- Bush 1 -->
+  <ellipse cx="100" cy="210" rx="20" ry="15" fill="#3CB371" />
+  
+  <!-- Bush 2 -->
+  <ellipse cx="200" cy="215" rx="25" ry="15" fill="#3CB371" />
+  
+  <!-- Bush 3 -->
+  <ellipse cx="300" cy="210" rx="20" ry="15" fill="#3CB371" />
+</svg>
